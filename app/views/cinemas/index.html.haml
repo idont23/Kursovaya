@@ -1,0 +1,24 @@
+.page-header
+  %h1= t('headers.cinemas.index')
+%table.table.table-hover.table-striped.center
+
+  %thead
+    %tr
+      %th= Cinema.human_attribute_name(:name)
+      %th= Cinema.human_attribute_name(:address)
+      %th
+      %th
+      %th
+
+  %tbody
+    - @cinemas.each do |cinema|
+      %tr
+        %td= cinema.name
+        %td= cinema.address
+        %td= link_to 'Показать', cinema
+        %td= link_to 'Изменить', edit_cinema_path(cinema)
+        %td= link_to 'Удалить', cinema, method: :delete, data: { confirm: 'Вы уверены?' }
+
+%br
+
+= link_to 'Новый кинотеатр', new_cinema_path

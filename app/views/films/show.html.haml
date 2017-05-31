@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b= Film.human_attribute_name(:name)
+  = @film.name
+%p
+  %b= Film.human_attribute_name(:duration)
+  = @film.duration
+%p
+  %b= Film.human_attribute_name(:country)
+  = @film.country
+%p
+  %b= Film.human_attribute_name(:cinemacompany)
+  = @film.cinemacompany
+%p
+  %b= Film.human_attribute_name(:minage)
+  = @film.minage
+
+= link_to 'Изменить', edit_film_path(@film)
+\|
+= link_to 'Назад', films_path

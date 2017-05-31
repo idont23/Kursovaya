@@ -1,0 +1,27 @@
+%h1 Listing film_participants
+
+%table
+  %thead
+    %tr
+      %th= Film_participant.human_attribute_name(:role)
+      %th= Film_participant.human_attribute_name(:task)
+      %th= Film_participant.human_attribute_name(:film_id)
+      %th= Film_participant.human_attribute_name(:participant_id)
+      %th
+      %th
+      %th
+
+  %tbody
+    - @film_participants.each do |film_participant|
+      %tr
+        %td= film_participant.role
+        %td= film_participant.task
+        %td= film_participant.film_id
+        %td= film_participant.participant_id
+        %td= link_to 'Показать', film_participant
+        %td= link_to 'Изменить', edit_film_participant_path(film_participant)
+        %td= link_to 'Удалить', film_participant, method: :delete, data: { confirm: 'Вы уверены?' }
+
+%br
+
+= link_to 'Новый участник фильма', new_film_participant_path

@@ -1,0 +1,23 @@
+%h1 Listing film_genres
+
+%table
+  %thead
+    %tr
+      %th Film_id
+      %th Genre_id
+      %th
+      %th
+      %th
+
+  %tbody
+    - @film_genres.each do |film_genre|
+      %tr
+        %td= film_genre.film_id
+        %td= film_genre.genre_id
+        %td= link_to 'Показать', film_genre
+        %td= link_to 'Изменить', edit_film_genre_path(film_genre)
+        %td= link_to 'Удалить', film_genre, method: :delete, data: { confirm: 'Вы уверены?' }
+
+%br
+
+= link_to 'Новый жанр фильма', new_film_genre_path

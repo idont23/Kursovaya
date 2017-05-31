@@ -1,0 +1,26 @@
+.page-header
+  %h1= t('headers.participants.index')
+
+%table.table.table-hover.table-striped.center
+  %thead
+    %tr
+      %th= Participant.human_attribute_name(:name)
+      %th= Participant.human_attribute_name(:surname)
+      %th= Participant.human_attribute_name(:birthday)
+      %th
+      %th
+      %th
+
+  %tbody
+    - @participants.each do |participant|
+      %tr
+        %td= participant.name
+        %td= participant.surname
+        %td= participant.birthday
+        %td= link_to 'Показать', participant
+        %td= link_to 'Изменить', edit_participant_path(participant)
+        %td= link_to 'Удалить', participant, method: :delete, data: { confirm: 'Вы уверены?' }
+
+%br
+
+= link_to 'Новый участник', new_participant_path

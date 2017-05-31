@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b= Participant.human_attribute_name(:name)
+  = @participant.name
+%p
+  %b= Participant.human_attribute_name(:surname)
+  = @participant.surname
+%p
+  %b= Participant.human_attribute_name(:birthday)
+  = @participant.birthday
+
+= link_to 'Изменить', edit_participant_path(@participant)
+\|
+= link_to 'Назад', participants_path

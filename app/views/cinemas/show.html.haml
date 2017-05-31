@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b= Cinema.human_attribute_name(:name)
+  = @cinema.name
+%p
+  %b= Cinema.human_attribute_name(:address)
+  = @cinema.address
+
+= link_to 'Изменить', edit_cinema_path(@cinema)
+\|
+= link_to 'Назад', cinemas_path

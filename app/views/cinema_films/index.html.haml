@@ -1,0 +1,24 @@
+.page-header
+  %h1= t('headers.cinema_films.index')
+
+%table
+  %thead
+    %tr
+      %th Cinema
+      %th Film
+      %th
+      %th
+      %th
+
+  %tbody
+    - @cinema_films.each do |cinema_film|
+      %tr
+        %td= cinema_film.cinema
+        %td= cinema_film.film
+        %td= link_to 'Показать', cinema_film
+        %td= link_to 'Изменить', edit_cinema_film_path(cinema_film)
+        %td= link_to 'Удалить', cinema_film, method: :delete, data: { confirm: 'Вы уверены?' }
+
+%br
+
+= link_to 'Новый фильм-кинотеатр', new_cinema_film_path

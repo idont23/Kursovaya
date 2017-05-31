@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Role:
+  = @film_participant.role
+%p
+  %b Task:
+  = @film_participant.task
+%p
+  %b Film:
+  = @film_participant.film_id
+%p
+  %b Participant:
+  = @film_participant.participant_id
+
+= link_to 'Изменить', edit_film_participant_path(@film_participant)
+\|
+= link_to 'Назад', film_participants_path

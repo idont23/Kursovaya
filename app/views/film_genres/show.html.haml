@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Film:
+  = @film_genre.film_id
+%p
+  %b Genre:
+  = @film_genre.genre_id
+
+= link_to 'Изменить', edit_film_genre_path(@film_genre)
+\|
+= link_to 'Назад', film_genres_path
